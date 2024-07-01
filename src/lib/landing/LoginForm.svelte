@@ -11,6 +11,7 @@
     export let header: string;
     export let description: string;
     export let logoSrc: IconType | string;
+    export let callbackUrl: string = "/app";
     export let graphic: string = "https://images.unsplash.com/photo-1496917756835-20cb06e75b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=640&q=80";
     export let graphicAlt: string = "Apple laptop on top of desk";
 </script>
@@ -28,7 +29,7 @@
             <p class="description">{description}</p>
         </div>
         <div class="provider-container">
-            <button class="button provider" on:click={() => signIn('google', {callbackUrl: "/app"})}>
+            <button class="button provider" on:click={() => signIn('google', {callbackUrl})}>
                 <Icon icon={FcGoogle} width={32} height={32} class="login-form-button-icon" />
                 <span>Continue with Google</span>
             </button>

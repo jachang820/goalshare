@@ -9,20 +9,21 @@
         Content_TiltedTiles
     } from "$lib/landing";
 
-    import { CiXpr } from "$lib/icons";
+    import ExternalLink from "$lib/ExternalLink.svelte";
+    import { CiXpr, FaRegularHandshake, OiCommentDiscussion, FaDove } from "$lib/icons";
 
     let modal: Modal;
 
 </script>
 
 <svelte:head>
-    <title>Try App!</title>
+    <title>Try Goalshare!</title>
 </svelte:head>
 
 <Modal bind:this={modal}>
     <LoginForm
-        brand="App Name"
-        header="Something about the app"
+        brand="Goalshare"
+        header="Welcome to Goalshare"
         description="Log in to the app, or sign up if it's you're first time!"
         logoSrc={CiXpr}>
 <!--        <span slot="fine-print">By continuing you agree to our Terms of Service and Privacy Agreement.</span>-->
@@ -30,43 +31,55 @@
 </Modal>
 
 <Hero_Tiles
-    header="App Name"
-    description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore "
-        + "et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip "
-        + "ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu "
-        + "fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt "
-        + "mollit anim id est laborum."}
-    buttonText="Try App Now!"
-    buttonTarget={modal}
-/>
+    header="Social media should motivate."
+    buttonText="Try Goalshare!"
+    buttonTarget={modal}>
+    <span slot="description">
+        Find people who share your goals and achieve them together!
+    </span>
+</Hero_Tiles>
+
 <Feature_ProductScreenshot
-    header="App features"
-    subheader="Feature Tagline"
-    description={"Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum "
-        + "pulvinar et feugiat blandit at. In mi viverra elit nunc."}
-/>
+    header="Find your people"
+    subheader="Social media for positivity."
+    features={[
+        {
+            name: "Choose an activity.",
+            description: "Join an activity group or start new ones and invite your friends.",
+            icon: FaRegularHandshake
+        }, {
+            name: "Follow people and make friends.",
+            description: "Discuss your goals with like minded people, and update each other on your progress.",
+            icon: OiCommentDiscussion
+        }, {
+            name: "Stay motivated.",
+            description: "Share text, photos or videos regularly. Whether it's camaraderie or rivalry, these are your people.",
+            icon: FaDove
+        }
+    ]}>
+    <span slot="description">
+        Engage with other people on the things you want to do and the goals you want to achieve. Build your future into your routine.
+    </span>
+</Feature_ProductScreenshot>
+
 <CTA_DarkPanel
-    header="Call To Action"
-    description={"Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum "
-        + "pulvinar et feugiat blandit at. In mi viverra elit nunc."}
-    buttonText="Act now!"
-/>
+        header="It starts today!"
+        buttonText="Join us now!"
+        buttonTarget={modal}>
+    <span slot="description">
+        <ExternalLink href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8443045/"
+                      --external-link-color="rgb(201, 224, 253)">Studies</ExternalLink>
+        has shown that social reward and community support improves enjoyment and ability to achieve goals.
+    </span>
+</CTA_DarkPanel>
+
 <Content_TiltedTiles
-    header="App productivity"
-    subheader="What can you do with this app?"
-    description={"Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum "
-        + "pulvinar et feugiat blandit at. In mi viverra elit nunc."}
-/>
+        header="Share your goals."
+        subheader="Share success.">
+    <span slot="description"></span>
+</Content_TiltedTiles>
+
 <Footer_SimpleCentered
-    navigationLinks={[
-        { name: 'Home', href: '#' },
-        { name: 'About', href: '#' },
-        { name: 'Pricing', href: '#' }
-    ]}
+    navigationLinks={[]}
+    copyrightCompany="Goalshare"
 />
-<!--<div class="flex min-h-full flex-row">-->
-<!--    <div class="w-full lg:w-1/2 h-full bg-cover px-6 py-12 mt-auto mb-auto lg:px-8 justify-center">-->
-<!--        <LoginForm brand="Goalshare" headline="Join Goalshare now!" logoSrc="/logo.png" />-->
-<!--    </div>-->
-<!--    <div class="w-full lg:w-1/2 min-h-full bg-cover" style="background-image: url('/hero.png');"></div>-->
-<!--</div>-->
