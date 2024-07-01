@@ -33,6 +33,10 @@ const providers: Provider[] = [
 
 export const { handle, signIn, signOut } = SvelteKitAuth({
     providers: providers,
+    session: {
+        maxAge: 60 * 60,
+        strategy: "jwt"
+    },
     secret: AUTH_SECRET,
     trustHost: true,
     pages: {

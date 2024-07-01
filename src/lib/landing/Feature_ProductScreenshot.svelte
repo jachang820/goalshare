@@ -85,9 +85,9 @@
 <style>
     .outer {
         overflow: hidden;
-        padding-top: 6rem;
-        padding-bottom: 6rem;
         background-color: transparent;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
     }
 
     .panel-container {
@@ -167,8 +167,8 @@
 
     @media (min-width: 640px) {
         .outer {
-            padding-top: 8rem;
-            padding-bottom: 8rem;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
         }
 
         .panel {
